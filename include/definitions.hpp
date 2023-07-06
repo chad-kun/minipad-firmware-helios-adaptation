@@ -44,7 +44,7 @@
 
 // Uncomment this line if the sensor readings go up when the key is being pressed down.
 // By default, the firmware is made to handle the readings going down and not up.
-// #define INVERT_SENSOR_READINGS
+//#define INVERT_SENSOR_READINGS
 
 // The delay for the debounce on digital keys. This is necessary because the contacts on digital buttons "bounce",
 // meaning instead of a steady HIGH signal you'll get a couple signal changes (e.g. HIGH LOW HIGH LOW HIGH)
@@ -58,12 +58,12 @@
 // NOTE: By the default config initialization, the amount of keys is limited to
 //       around 26 since the characters are assigned backwards started from 'z'.
 // NOTE: By the RP2040, the amount of analog pins (and therefore keys) is limited o 4.
-#define HE_PIN(index) A0 + HE_KEYS - index - 1
+#define HE_PIN(index) A3 - index
 
 // Macro for getting the pin of the specified index of the digital key. The pin order is not swapped here, meaning
 // the first digital key is on pin 0, the second on 1, and so on.
 // NOTE: This way, the amount of keys is limited to 26 since the 27th key overlaps with the first analog port, 26.
-#define DIGITAL_PIN(index) 0 + DIGITAL_KEYS - index - 1
+#define DIGITAL_PIN(index) 18 + index
 
 // Add a compiler error if the firmware is being tried to built with more than the supported 4 keys.
 // (only 4 ADC pins available)
